@@ -9,7 +9,7 @@ Providing a second spring api application that can be connected via REST or Rabb
 gradle build
 
 # Start server on port 8081
-PORT=8081 gradle runBoot
+PORT=8081 gradle bootRun
 ```
 
 # Database Scripts
