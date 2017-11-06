@@ -4,11 +4,12 @@ package training;
 
 public class Configuration {
 
-  public final Integer RESULTS_PER_PAGE = (System.getenv("RESULTS_PER_PAGE") != null) ? Integer.parseInt(System.getenv("RESULTS_PER_PAGE")) : 5;
+  // good example for port binding from environment variables -> PaaS standard
+  public final Integer PORT = (System.getenv("PORT") != null) ? Integer.parseInt(System.getenv("PORT")) : 8081;
 
   public String toString() {
     String str = "";
-    str += String.format("RESULTS_PER_PAGE: %d \n", RESULTS_PER_PAGE);
+    str += String.format("PORT: %d \n", PORT);
     return str;
   }
 }
