@@ -8,6 +8,9 @@ Providing a second spring api application that can be connected via REST or Rabb
 # Build package
 gradle build
 
+# Initialize database
+db/reset_database.sh
+
 # Start server on port 8081
 PORT=8081 gradle bootRun
 ```
@@ -34,13 +37,16 @@ curl is a tool to send http requests from the console.
 jq is a tool to display json API outputs in a prettyfied format on the console.
 curl can be combined with a piped jq call to display request responses on the console.
 
-## Endpoints
+## REST Endpoints
 
 ```
 # List messages
 curl -v 'localhost:8081/v1/messages' |jq '.'
 
+# Show a single message
+curl -v 'localhost:8081/v1/messages/1' |jq '.'
+
 # POST a new message
-curl -v -X POST -d '{ "messageHeader": "My message header", "messageBody" : "My Super Message", "recipient": "test@example.com" }' 'localhost:8081/v1/messages' -H 'Content-Type: application/json' |jq '.'
+curl -v -X POST -d '{ "header": "My message header", "body" : "My Super Message", "recipient": "test@example.com" }' 'localhost:8081/v1/messages' -H 'Content-Type: application/json' |jq '.'
 
 ```
