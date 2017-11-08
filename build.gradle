@@ -22,6 +22,10 @@ dependencies {
 
   // JSON support for message building
   compile "com.googlecode.json-simple:json-simple:1.1.1"
+
+  // health endpoint dependency
+  compile "org.springframework.boot:spring-boot-starter-actuator"
+
   testCompile "junit:junit:4.12"
 }
 

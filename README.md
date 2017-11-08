@@ -49,4 +49,7 @@ curl -v 'localhost:8081/v1/messages/1' |jq '.'
 # POST a new message
 curl -v -X POST -d '{ "header": "My message header", "body" : "My Super Message", "recipient": "test@example.com" }' 'localhost:8081/v1/messages' -H 'Content-Type: application/json' |jq '.'
 
+### Health status
+curl localhost:8080/health |jq '.'
+
 ```
