@@ -46,6 +46,7 @@ public class MessageCreate implements OperationInterface {
     }
 
     repository.save(model);
+    Application.logger.info("Created message: {}", model);
     payload.put("httpStatus", HttpStatus.CREATED);
     payload.put("model", model);
     FullRepresenter rep = new FullRepresenter(model);
